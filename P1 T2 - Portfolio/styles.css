@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    background: #0b061f;
+    color: #fdfdfd;
+}
+span
+{
+    color: #8E44AD;
+}
+.header
+{
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    transition: .5s;
+    background: #0b061f;
+}
+.header.sticky
+{
+    background: #8E44AD;
+    box-shadow: 0 .1rem 1rem var(rgba(0, 0, 0, .2));
+}
+.logo
+{
+    font-size: 2.5rem;
+    color: #8E44AD;
+    font-weight: 600;
+    margin-right: auto;
+}
+.navbar a
+{
+    position: relative;
+    font-size: 1.7rem;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 3.5rem;
+}
+.header.sticky .navbar a
+{
+    color: var(--bg-color);
+}
+.header.sticky .navbar a.active
+{
+    color: #8E44AD;
+}
+.navbar a.active::before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: .2rem;
+    background: #fdfdfd;
+}
+.header.sticky .navbar a::before
+{
+    background: #8E44AD;
+    opacity: .7;
+}
+#darkMode-icon
+{
+    font-size: 2.4rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+.header.sticky #darkMode-icon
+{
+    color: var(--text-color);
+    opacity: .9;
+}
+#menu-icon
+{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+section
+{
+    align-items: center;
+    min-height: 100vh;
+    padding: 10rem 7% 2rem;
+}
+.home
+{
+    display: flex;
+    align-items: center;
+}
+.home .home-content
+{
+    width: 100%;
+}
+.home-content h3
+{
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: .3;
+}
+.home-content h1
+{
+    text-align: center;
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+.home-content p
+{
+    font-size: 1.6rem;
+}
+.home-content .social-media a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid #8E44AD;
+    border-radius: 50%;
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .2);
+    font-size: 2rem;
+    color: #8E44AD;
+    margin: 2.5rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+.home-content .social-media a:hover
+{
+    background: #8E44AD;
+    color: #fdfdfd;
+}
+.btn
+{
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: #8E44AD;
+    border-radius: .6rem;
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .2);
+    font-size: 1.6rem;
+    color: #fdfdfd;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    border: .2rem solid transparent;
+    transition: .5s ease;
+}
+.btn:hover
+{
+    background: rgba(0, 0, 0, .2);
+    color: #fdfdfd;
+    border-color: #8E44AD;
+}
+
+
+/* about me section */
+.about
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.heading
+{
+    font-size: 4.5rem;
+    text-align: center;
+}
+.about-content h2
+{
+    text-align: left;
+    line-height: 1.2;
+}
+.about-content h3
+{
+    font-size: 2rem;
+}
+.about-content p
+{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+
+/* projects section*/
+.projects
+{
+    min-height: auto;
+    padding-bottom: 10rem;
+}
+.projects h2
+{
+    margin-bottom: 4rem;
+}
+.projects .projects-div
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.projects-div .projects-box
+{
+    position: relative;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+}
+.projects-box img
+{
+    width: 100%;
+    transition: .5s ease;
+}
+.projects-box:hover img
+{
+    transform: scale(1.1);
+}
+.projects-box .projects-layer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    opacity: 0;
+    transition: .5s ease;
+}
+.projects-box:hover .projects-layer
+{
+    opacity: 1;
+}
+.projects-layer h4
+{
+    font-size: 3rem;
+}
+.projects-layer p
+{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+.projects-layer a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: 50%;
+}
+.projects-layer a i
+{
+    color: #333;
+    font-size: 2rem;
+}
+
+
+/* Certify section*/
+.certify
+{
+    min-height: auto;
+    padding-bottom: 10rem;
+}
+.certify h2
+{
+    margin-bottom: 4rem;
+}
+.certify h3
+{
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.certify .certify-div
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.certify-div .certify-box
+{
+    position: relative;
+    display: flex;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+}
+.certify-box img
+{
+    width: 100%;
+    transition: .5s ease;
+}
+.certify-box:hover img
+{
+    transform: scale(1.1);
+}
+.certify-box .certify-layer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    opacity: 0;
+    transition: .5s ease;
+}
+.certify-box:hover .certify-layer
+{
+    opacity: 1;
+}
+.certify-layer h4
+{
+    font-size: 2rem;
+}
+.certify-layer p
+{
+    font-size: 1rem;
+    margin: .3rem 0 1rem;
+}
+.certify-layer a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: 50%;
+}
+.certify-layer a i
+{
+    color: #333;
+    font-size: 2rem;
+}
